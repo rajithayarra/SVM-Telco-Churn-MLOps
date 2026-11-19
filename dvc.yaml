@@ -1,3 +1,4 @@
+
 stages:
   train:
     cmd: python main.py
@@ -9,9 +10,16 @@ stages:
       - src/feature_selection.py
       - src/train.py
       - main.py
-      - params.yaml
     params:
-      - params.yaml
+      - params.yaml:
+          - version
+          - random_state
+          - test_size
+          - kernel
+          - C
+          - gamma
+          - degree
+          - lasso_alpha
     outs:
       - artifacts/svm_bundle.joblib
       - artifacts/metrics.csv

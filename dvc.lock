@@ -1,0 +1,52 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python main.py
+    deps:
+    - path: data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv
+      hash: md5
+      md5: 0f9de68e012bd3aed5fa7cdc9fc421af
+      size: 977501
+    - path: main.py
+      hash: md5
+      md5: 998986aa0c1f86ecb41a241f73e9f431
+      size: 308
+    - path: src/data_loader.py
+      hash: md5
+      md5: 3959e880b0d3563764c6c925916e7988
+      size: 439
+    - path: src/feature_engineering.py
+      hash: md5
+      md5: 96dc57fb0d3f543e6732613db91c916c
+      size: 242
+    - path: src/feature_selection.py
+      hash: md5
+      md5: 0c787f3942e5eb14a18fd09d1e375239
+      size: 1016
+    - path: src/preprocessing.py
+      hash: md5
+      md5: 3eff3afb533e9cc0c48fb150631365e5
+      size: 844
+    - path: src/train.py
+      hash: md5
+      md5: 18f17e401725718a4a47766f8abc60ac
+      size: 4306
+    params:
+      params.yaml:
+        C: 1.0
+        degree: 3
+        gamma: scale
+        kernel: rbf
+        lasso_alpha: 0.01
+        random_state: 42
+        test_size: 0.2
+        version: V2
+    outs:
+    - path: artifacts/metrics.csv
+      hash: md5
+      md5: 9b83be63ff24792aaa9910cfff0e50ce
+      size: 138
+    - path: artifacts/svm_bundle.joblib
+      hash: md5
+      md5: dd5279b63f6f20286ec11c424e418cb6
+      size: 765352
