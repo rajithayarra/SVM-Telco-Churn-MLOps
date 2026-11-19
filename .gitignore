@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mlflow/
+mlruns/
+data/raw/*.csv
+data/processed/*
+artifacts/*
+.dvc/cache/
+.DS_Store

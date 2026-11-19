@@ -1,0 +1,17 @@
+stages:
+  train:
+    cmd: python main.py
+    deps:
+      - data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv
+      - src/data_loader.py
+      - src/preprocessing.py
+      - src/feature_engineering.py
+      - src/feature_selection.py
+      - src/train.py
+      - main.py
+      - params.yaml
+    params:
+      - params.yaml
+    outs:
+      - artifacts/svm_bundle.joblib
+      - artifacts/metrics.csv

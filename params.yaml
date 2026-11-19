@@ -1,0 +1,8 @@
+version: V2
+random_state: 42
+test_size: 0.2
+kernel: rbf
+C: 1.0
+gamma: scale
+degree: 3
+lasso_alpha: 0.01
